@@ -1,13 +1,8 @@
 {
-  "name": "My First Extension",
+  "name": "close FB",
   "version": "1.0",
   "background_page": "background.html",
   "permissions": [
     "tabs", "https://www.facebook.com/*"
-  ],
-  "browser_action": {
-    "default_icon": "icon.png",
-    "name":"use less facebook"
-
-  }
+  ]
 }
