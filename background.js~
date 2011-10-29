@@ -1,18 +1,22 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+var patt = new RegExp("facebook.com");
+var pagesVisited = 0;
+function checkTab(tabId, tab) {
+    
+    if(patt.test(tab.url)&&pagesVisited>=3){
+    	chrome.tabs.remove(tabId);
+	window.open("popup.html", "FB",
+	"status = 1, height = 300, width = 400, location = no, menubar = no, titlebar=no"); 
+	pagesVisited=0;
+    }
+        if(patt.test(tab.url)){
+	 pagesVisited++;
+    }
+}
 
-// Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.tabs.executeScript(
-      null, {code:"document.body.style.background='red !important'"});
-	chrome.tabs.remove(5);
+chrome.tabs.onUpdated.addListener(function(tabId, info, tab){
+    if (tab.url !== undefined && info.status == "complete"){
+	checkTab(tabId, tab);
+    }
 });
 
 
-
-var i = 0;
-window.setInterval(function() {
-  chrome.browserAction.setBadgeText({text:String(i)});
-  i++;
-}, 600);

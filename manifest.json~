@@ -2,7 +2,9 @@
   "name": "close FB",
   "version": "1.0",
   "background_page": "background.html",
+  "icons": { "16": "icon16.png",
+	     "48": "icon48.png",
+	    "128": "icon128.png" },
   "permissions": [
-    "tabs", "https://www.facebook.com/*"
-  ]
+    "tabs", "https://www.facebook.com/*" ]
 }

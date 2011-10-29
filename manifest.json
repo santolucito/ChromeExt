@@ -1,8 +1,12 @@
 {
-  "name": "close FB",
+  "name": "FB time managment",
   "version": "1.0",
+  "description": "Keeps you from wasting time on facebook by closing the tab after you have taken a long enough break!",
+   
   "background_page": "background.html",
+  "icons": { "16": "icon16.png",
+	     "48": "icon48.png",
+	    "128": "icon128.png" },
   "permissions": [
-    "tabs", "https://www.facebook.com/*"
-  ]
+    "tabs", "https://www.facebook.com/*" ]
 }
