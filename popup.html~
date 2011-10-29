@@ -2,8 +2,20 @@
 <head>
 <title>Don't you have work to do?</title>
 </head>
+<body>
 <br />
 <center>
-You have been on facebook too long!
-<center>
+<h1>
+You have been on facebook too long!<br />
+Go get some homework done!
+</h1>
+<script type="text/javascript">
+function test(){
+	var status = document.getElementById("status");
+status.innerHTML = localStorage.getItem('page_limit');
+}
+</script>
+<p> <b id='status'></b></p>
+</center>
+</body>
 </html>
