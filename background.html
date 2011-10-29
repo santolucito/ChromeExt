@@ -1,9 +1,3 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Background Page</title>
-    <script src="background.js"></script>
-  </head>
-  <body>
-  </body>
-</html>
+    chrome.tabs.getSelected(null, function (tab) {
+      chrome.tabs.remove(tab.id);
+    });
