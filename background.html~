@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Background Page</title>
-    <script src="content.js"></script>
+    <script src="content_script.js"></script>
   </head>
   <body>
   </body>
