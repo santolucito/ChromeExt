@@ -5,44 +5,26 @@
 // Saves options to localStorage.
 function save_options() {
   var select = document.getElementById("limit");
-  var limit = select.children[select.selectedIndex].value;
-  localStorage.page_limit = limit;
+  localStorage.page_limit = limit.value;
 
   // Update status to let user know options were saved.
   var status = document.getElementById("status");
   status.innerHTML = "Limit Saved to "+localStorage.page_limit;
-  setTimeout(function() {
-    status.innerHTML = "";
-  }, 2000);
+
 }
 
 // Restores select box state to saved value from localStorage.
 function restore_options() {
-  var page = localStorage.getItem("page_limit");
-  if (!page) {
-    return;
-  }
-  var select = document.getElementById("limit");
-  for (var i = 0; i < select.children.length; i++) {
-    var child = select.children[i];
-    if (child.value == page) {
-      child.selected = "true";
-      break;
-    }
-  }
+    var status = document.getElementById("status");
+    if(localStorage.page_limit)
+    status.innerHTML = "Limit Saved to "+localStorage.page_limit;
 }
 
 </script>
 
 <body onload="restore_options()">
-<p>Specify how many pages you can visit before the tab is closed</p>
-Page Limit:
-<select id="limit">
- <option value="5">5</option>
- <option value="10">10</option>
- <option value="15">15</option>
- <option value="20">20</option>
-</select>
+<p>Specify how many pages you can visit before the facebook is closed.</p>
+Page Limit: <input id = "limit", type="text" value=""/>
 
 <br>
 <button onclick="save_options()">Save</button>
