@@ -2,7 +2,7 @@
   "name": "FB time managment",
   "version": "1.0",
   "description": "Keeps you from wasting time on facebook by closing the tab after you have taken a long enough break!",
-   
+  "options_page": "options.html",   
   "background_page": "background.html",
   "icons": { "16": "icon16.png",
 	     "48": "icon48.png",
